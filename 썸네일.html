@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+<style>
+
+#wrapper{
+    width: 600px;
+    margin: auto;
+}
+#cellArea{  
+    height: 50px;
+    float: left;
+}
+#box{
+    background-color: green;
+    height: 450px;
+    width: 500px;
+    float: left;
+}
+#cellArea div{
+    width: 50px;
+    height: 50px;
+}
+#c2{background: url(../images/i2.png);}
+#c3{background: url(../images/i3.png);}
+#c4{background: url(../images/i4.png);}
+#c5{background: url(../images/i5.png);}
+#c6{background: url(../images/i6.png);}
+#c7{background: url(../images/i7.png);}
+#c8{background: url(../images/i8.png);}
+#c9{background: url(../images/i9.png);}
+#c10{background: url(../images/i10//.png);}
+
+</style>
+<script>
+    function setImages(c){
+        var box = document.getElementById("box");
+        box.style.background=c;
+
+    }
+</script>
+</head>
+<body>
+    <!-- 모든 태그는 두가지 속성을 가지고있다
+            1) block : 수평적으로 다른 요소를 허용하지 않는 특징
+            2) inline : 수평적으로 다른 요소와 공존할 수 있는 특징 -->
+    <div id="wrapper">
+        <div id="cellArea">
+            <div id="c2" onclick="setImages('url(../images/i2.png)')"></div>
+            <div id="c3" onclick="setImages('url(../images/i3.png)')"></div>
+            <div id="c4" onclick="setImages('url(../images/i4.png)')"></div>
+            <div id="c5" onclick="setImages('url(../images/i5.png)')"></div>
+            <div id="c6" onclick="setImages('url(../images/i6.png)')"></div>
+            <div id="c7" onclick="setImages('url(../images/i7.png)')"></div>
+            <div id="c8" onclick="setImages('url(../images/i8.png)')"></div>
+            <div id="c9" onclick="setImages('url(../images/i9.png)')"></div>
+            <div id="c10" onclick="setImages('url(../images/i10.png)')"></div>
+        </div>
+         <div id="box"></div>
+    </div>
+</body>
+</html>

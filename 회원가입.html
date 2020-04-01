@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+<style>
+/* 
+CSS를 작성하는 방법은 크게 2가지
+1) 인라인 방식 : 해당요소에 직접명시하는 방법
+                       일괄처리가 아닌, 특정한 요소에만 스타일 부여시
+2) 임베드 방식 : style 태그에 명시하는 방법
+                       선택자를 이용하여 일괄처리 가능..
+ */
+ td{
+     font-size: 9pt;
+ }
+ textarea{
+     width: 99%;
+     height: 150px;
+
+ }
+ table{
+     background-image: url("../images/pi.png");
+ }
+</style>
+<script>
+    // 웹퍼블리셔가 html 코딩을 다 마치고, 개발자에게 파일을 넘기면
+    // 개발자는 프로그램을 구현해야 한다.
+    // 서버에 전송하기 전에, 사용자가 유효한 데이터를 입력했는지
+    // 유효성을 체크해보자!!
+function regist(){
+    // 아이디를 기입하지 않으면 아래의 전송 코드를 만나지 않게 처리(유효성체크)
+    if(document.getElementById("uid").value==""){
+        alert("아이디를 입력하세요");
+        document.getElementById("uid").focus();
+        return;
+    }
+   
+
+    if(document.getElementById("pwd").value==""){
+        alert("비밀번호를 입력하세요");
+        return;
+    }
+
+    var form1 = document.getElementById("form1");
+    form1.action="http://naver.com"; //전송할 서버의 url 지정!
+    form1.submit(); //전송!
+}
+</script>
+
+</head>
+<body>
+    <!-- 폼태그는 서버에 전송하기 위한 범위를 설정하는 논리적
+        태그이다. 즉 어떤 컴포넌트들을 전송 범위로 할지를 결정
+        우리의 경우엔 테이블에 존재하는 모든 컴포넌트를 전송..
+        UI컴포넌트란> button, text 등과 같이 사용자의 입력을 받는
+                             GUI(Graphic User Interface) 요소들을 일컬음 -->
+    <form id="form1">
+        <table width="500px" border="1px" align="center">
+            <tr>
+                <td colspan="2" align="center"><h2>회원가입 양식</h2></td> 
+            </tr>
+            <tr>
+                <!-- 해당 요소에 직접 명시하는 스타일을 인라인 방식
+                    대량으로 적용할때는 반복해야 하는 단점.. -->
+                <td>아이디</td>
+                <td><input id ="uid" type="text" placeholder="아이디를 입력하세요"/></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input id ="pwd" type="password" maxlength="8"/> *8자 이내로 입력하세요
+                </td>
+            </tr>
+            <tr>
+                <!-- id와 name의 공통점 및 차이점
+                    1) 공통점 : 둘다 문서내의 특정 요소를 접근하기 위해
+                        명칭을 부여하는것이다!!
+                    2) 차이점 : id는 반드시 중복되면 안된다!!
+                                    name은 중복을 허용해준다
+                                    참고로 name의 경우 중복될 경우 배열로 인식 -->
+                <td>성별</td>
+                <td>
+                    <input type="radio" name="gender"/>남
+                    <input type="radio"  name="gender"/>여
+                </td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td>
+                    <input type="text"/>@
+                    <select>
+                        <option>메일선택</option>
+                        <option>daum.net</option>
+                        <option>gmail.com</option>
+                        <option>naver.com</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>자기소개</td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <td>사진업로드</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>취미</td>
+                <td>
+                    영화<input type="checkbox"/>
+                    게임<input type="checkbox"/>
+                    독서<input type="checkbox"/>
+                    여행<input type="checkbox"/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>우편번호</td>
+                <td><input type="text" readonly size="10"/>
+                    <button>우편번호 검색</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="button" onclick="regist()" >등록하기</button>
+                    <button>초기화</button>
+                </td>
+            </tr>
+
+        </table>
+</form>
+</body>
+</html>

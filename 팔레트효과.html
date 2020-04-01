@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+<style>
+#wrapper{
+    width: 350px;
+    margin: auto; /*좌우측의 남은 마진값을 양분하여 화면에서 가운데로 위치할수있게함*/
+}
+  #cellArea{
+    background-color: black;
+    height: 50px;
+     
+  }  
+  #box{
+      background-color: burlywood;
+      height: 300px;
+      
+  }
+  #c1{ background-color: red;}
+  #c2{ background-color: orange;}
+  #c3{ background-color: yellow;}
+  #c4{ background-color: green;}
+  #c5{ background-color: blue;}
+  #c6{ background-color: navy;}
+  #c7{ background-color: purple;}
+  #cellArea div{
+    width: 50px;
+    height: 50px;
+    float: left;
+  }
+</style>
+<script>
+function setColor(c){
+    //box 라는 div에 배경색을 바꿔보자!!
+    var box = document.getElementById("box");
+     box.style.background=c;
+}
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="cellArea">
+            <div id="c1" onclick="setColor('red')"></div>
+            <div id="c2" onclick="setColor('orange')"></div>
+            <div id="c3" onclick="setColor('yellow')"></div>
+            <div id="c4" onclick="setColor('green')"></div>
+            <div id="c5" onclick="setColor('blue')"></div>
+            <div id="c6" onclick="setColor('navy')"></div>
+            <div id="c7" onclick="setColor('purple')"></div>
+        </div>
+        <div id="box"></div>
+
+    </div>
+    
+</body>
+</html>
